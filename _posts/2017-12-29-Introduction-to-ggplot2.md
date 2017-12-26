@@ -18,9 +18,9 @@ using built-in R datasets. At the conclusion of the tutorial, the user
 will have all the necessary tools to apply these methods to their own
 datasets and sufficient knowledge to further explore ggplot2's functions
 on their own. This tutorial starts by introducing the philosophy and
-logic behind ggplot2, segues into breaking down the different components
-of a ggplot2 graphic, and concludes with examples to concretize the
-concepts presented and resources for future exploration.
+logic behind the ggplot2 visualization package, segues into breaking down 
+the different components of a ggplot2 graphic, and concludes with examples 
+to concretize the concepts presented and resources for future exploration.
 
 A Grammar of Graphics
 ---------------------
