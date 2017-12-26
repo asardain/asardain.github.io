@@ -37,7 +37,7 @@ form of a graphic.
 Consider the following plot, for instance, which presents lynx and hare
 trappings between 1821-1934 in Canada:
 
-![](blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-2-1.png)
+![](https://github.com/asardain/asardain.github.io/tree/master/blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-2-1.png)
 
 <sup>(Data adapted from Odum, Fundamentals of Ecology, Saunders,
 1953)</sup>
@@ -66,20 +66,20 @@ represented as points, we simply have to replace one element -
 
     ggplot(data = lynxhare, aes (x = Year, y = Count, group = Species, colour = Species)) + geom_point() + theme_minimal()
 
-![](blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-5-1.png)
+![](https://github.com/asardain/asardain.github.io/tree/master/blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-5-1.png)
 
 Similarly, we can present the data as columns, by making a similar
 substitution:
 
     ggplot(data = lynxhare, aes (x = Year, y = Count, group = Species, colour = Species, fill = Species)) + geom_col() + theme_minimal()
 
-![](blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-7-1.png)
+![](https://github.com/asardain/asardain.github.io/tree/master/blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-7-1.png)
 
 We may even combine elements:
 
     ggplot(data = lynxhare, aes (x = Year, y = Count, group = Species, colour = Species)) + geom_point() + geom_line() + theme_minimal()
 
-![](blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-9-1.png)
+![](https://github.com/asardain/asardain.github.io/tree/master/blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-9-1.png)
 
 The grammar of graphics philosophy simplifies the creation of plots by
 breaking down the graphic into its constititutive elements. Having to
@@ -209,12 +209,12 @@ species: Iris setosa, Iris versicolor, and Iris virginica.
 
 Let's say we are interested in plotting the relationship between a
 flower's sepal length and its sepal width. For now, we will assume we're
-not interested in distinguishing between the three species. Let's see
-how we might plot this:
+not interested in distinguishing between the three species. 
 
-    library(ggplot2) # Load in the ggplot library
+Let's start by taking a look at our dataset:
+
     data(iris) # Load in the dataset iris from R's built-in datasets
-    head(iris) # Let's take a quick look at what the data looks like
+    head(iris)
 
 
     ##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
@@ -225,7 +225,10 @@ how we might plot this:
     ## 5          5.0         3.6          1.4         0.2  setosa
     ## 6          5.4         3.9          1.7         0.4  setosa
 
+Let's see how we might plot this:
 
+    library(ggplot2) # Load in the ggplot library
+    
     ggplot(data = iris,                              # (1)
         aes(x = Sepal.Length, y = Sepal.Width)) +    # (2)
         geom_point() +                               # (3)
@@ -233,7 +236,7 @@ how we might plot this:
         ylab("Sepal Width (mm)") +           
         ggtitle("Sepal dimensions")                  # (5)
 
-![](blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-10-1.png)
+![](https://github.com/asardain/asardain.github.io/tree/master/blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-10-1.png)
 
 1.  We start by providing ggplot2 with a data frame object which
     contains the data of interest.
@@ -268,7 +271,7 @@ corresponding column from our data frame (here, 'species') into our
         ylab("Sepal Width (mm)") +           
         ggtitle("Sepal dimensions")
 
-![](blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-11-1.png)
+![](https://github.com/asardain/asardain.github.io/tree/master/blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-11-1.png)
 
 Let us say we wanted to make some aesthetic changes to our plot. For
 instance, let us say we wanted to change the color of the points, to set
@@ -286,7 +289,7 @@ our plot. Here's how we might go about doing this:
         ylim(0,5) +           
         theme_bw()                                                                #(3)  
 
-![](blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-12-1.png)
+![](https://github.com/asardain/asardain.github.io/tree/master/blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-12-1.png)
 
 1.  To our previous code, we now add a layer that changes the colors of
     our data points. For a complete list of colors supported by ggplot,
@@ -322,7 +325,7 @@ is very simple in ggplot2:
         theme_bw() + 
         geom_smooth(method = 'lm', se = FALSE)
 
-![](blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-13-1.png)
+![](https://github.com/asardain/asardain.github.io/tree/master/blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-13-1.png)
 
 Here, all we had to add a `geom_smooth()` layer (recall from before that
 we can add multiple geoms on the same plot) and specify the regression
@@ -366,15 +369,15 @@ For instance, from the previous example:
         geom_smooth(method = 'lm', se = FALSE)
      our.plot
 
-![](blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-14-1.png)
+![](https://github.com/asardain/asardain.github.io/tree/master/blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-14-1.png)
 
      our.plot + theme_bw()
 
-![](blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-15-1.png)
+![](https://github.com/asardain/asardain.github.io/tree/master/blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-15-1.png)
 
      our.plot + theme_dark()
 
-![](blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-16-1.png)
+![](https://github.com/asardain/asardain.github.io/tree/master/blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-16-1.png)
 
 Example 2:
 ----------
@@ -399,7 +402,7 @@ Let's start by creating the basic plot:
         aes(x = Head, color = KnownSex)) +          #(1)
         geom_histogram()                            #(2)
 
-![](blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-18-1.png)
+![](https://github.com/asardain/asardain.github.io/tree/master/blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-18-1.png)
 
 1.  As before, we feed `ggplot()` our dataset, and specify the variables
     we are interested in conveying in our graphic. Histograms show
@@ -437,7 +440,7 @@ into to make our plot easier to read. Both changes are easy to make:
         aes(x = Head, color = KnownSex, fill = KnownSex)) +                 #(1)
         geom_histogram(position = "identity", alpha = 0.5, binwidth = 0.5)  #(2)
 
-![](blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-19-1.png)
+![](https://github.com/asardain/asardain.github.io/tree/master/blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-19-1.png)
 
 1.  Here, we've specified another argument in our `aes()` - that any
     /filling in/ of colors should be done on the basis of sex. Although
@@ -473,7 +476,7 @@ stripped-down theme.
       scale_color_manual(values=c("lightskyblue3", "dodgerblue4")) +
         scale_fill_manual(values=c("lightskyblue3", "dodgerblue4"))
 
-![](blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-20-1.png)
+![](https://github.com/asardain/asardain.github.io/tree/master/blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-20-1.png)
 
 Having completed Example 1, the layers added here should require no
 additional explanation. It is worth noting, however, that there are two
@@ -520,7 +523,7 @@ Once we have our means calculated, we can run the following code:
         geom_vline(data=mu, aes(xintercept=Grp.Mean,color=KnownSex),    
                 linetype="dashed", size=0.75)                                               #(3)
 
-![](blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-22-1.png)
+![](https://github.com/asardain/asardain.github.io/tree/master/blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-22-1.png)
 
 1.  Before we overlay our density plot, we must convert the counts on
     our histogram to densities. We do this by passing `..density..` to
@@ -556,7 +559,7 @@ groups into separate graphs with the addition of a single line:
                 linetype="dashed", size=0.75) +
         facet_wrap(~KnownSex)                                               
 
-![](blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-23-1.png)
+![](https://github.com/asardain/asardain.github.io/tree/master/blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-23-1.png)
 
 `facet_wrap`, a member of the family of facet function, divides the
 plots according to a variable and wraps them into a rectangular layout.
