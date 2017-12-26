@@ -37,7 +37,7 @@ form of a graphic.
 Consider the following plot, for instance, which presents lynx and hare
 trappings between 1821-1934 in Canada:
 
-![](/blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-2-1.png?raw=true)
+![png](/blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-2-1.png)
 
 <sup>(Data adapted from Odum, Fundamentals of Ecology, Saunders,
 1953)</sup>
