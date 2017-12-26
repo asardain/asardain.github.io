@@ -1,7 +1,7 @@
 This is a notebook that was adapted from a workshop I gave to the Panama
 R User Group in Panama City. Although the tutorial assumes the user has
 a working knowledge of R, it is intended for all levels of R users –
-from beginner to advanced - and requires no prior knowledge of ggplot2.
+from beginner to advanced – and requires no prior knowledge of ggplot2.
 
 The purpose of this tutorial is to provide a baseline understanding of
 ggplot2 by guiding the user through a series of interactive exercises
@@ -207,6 +207,7 @@ how we might plot this:
     data(iris) # Load in the dataset iris from R's built-in datasets
     head(iris) # Let's take a quick look at what the data looks like
 
+
     ##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
     ## 1          5.1         3.5          1.4         0.2  setosa
     ## 2          4.9         3.0          1.4         0.2  setosa
@@ -214,6 +215,7 @@ how we might plot this:
     ## 4          4.6         3.1          1.5         0.2  setosa
     ## 5          5.0         3.6          1.4         0.2  setosa
     ## 6          5.4         3.9          1.7         0.4  setosa
+
 
     ggplot(data = iris,                              # (1)
         aes(x = Sepal.Length, y = Sepal.Width)) +    # (2)
