@@ -575,7 +575,7 @@ be adequately prepared toexplore ggplot2's more advanced features on
 your own. To help get you started, I strongly recommend consulting some
 of the following resources:
 
-ggplot2
+ggplot2:
 
 -   [The R Graph Catalog](http://shinyapps.stat.ubc.ca/r-graph-catalog/)
 -   [The RStudio ggplot2 Cheat
