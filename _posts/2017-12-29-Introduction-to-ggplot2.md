@@ -66,14 +66,14 @@ represented as points, we simply have to replace one element -
 
     ggplot(data = lynxhare, aes (x = Year, y = Count, group = Species, colour = Species)) + geom_point() + theme_minimal()
 
-![](https://github.com/asardain/asardain.github.io/tree/master/blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-5-1.png)
+![png](https://github.com/asardain/asardain.github.io/blob/master/blog_files/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-5-1.png)
 
 Similarly, we can present the data as columns, by making a similar
 substitution:
 
     ggplot(data = lynxhare, aes (x = Year, y = Count, group = Species, colour = Species, fill = Species)) + geom_col() + theme_minimal()
 
-![](https://github.com/asardain/asardain.github.io/tree/master/blogfiles/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-7-1.png)
+![png](https://github.com/asardain/asardain.github.io/blob/master/blog_files/2017-12-29-Introduction-to-ggplot2_files/unnamed-chunk-7-1.png)
 
 We may even combine elements:
 
