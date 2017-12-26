@@ -3,7 +3,7 @@
 layout: post
 title: "Introduction to ggplot2"
 date: 2017-12-29
-comments: true
+comments: false
 
 ---
 
