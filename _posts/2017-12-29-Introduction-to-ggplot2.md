@@ -1,3 +1,12 @@
+---
+
+layout: post
+title: "Introduction to ggplot2"
+date: 2017-12-29
+comments: true
+
+---
+
 This is a notebook that was adapted from a workshop I gave to the Panama
 R User Group in Panama City. Although the tutorial assumes the user has
 a working knowledge of R, it is intended for all levels of R users –
