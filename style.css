@@ -20,7 +20,7 @@
   --card-hover: rgba(255,255,255,0.07);
   --max-w: 1200px;
   --nav-h: 64px;
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font: 'Switzer', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   /* Dither dot-grid: a 4×4 Bayer-inspired repeating dot pattern */
   --dither-dot: radial-gradient(circle, rgba(0,153,255,0.18) 1px, transparent 1px);
@@ -55,9 +55,11 @@ body {
   background: transparent;
   color: var(--text);
   font-family: var(--font);
-  line-height: 1.6;
+  font-weight: 400;
+  line-height: 1.0;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ── Links ── */
@@ -102,7 +104,7 @@ a {
 .nav-logo {
   font-size: 18px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: -0.03em;
   color: var(--text);
   transition: color 0.2s;
 }
@@ -119,9 +121,9 @@ a {
 
 .nav-links a {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--muted);
-  letter-spacing: 0.03em;
+  letter-spacing: -0.02em;
   transition: color 0.2s;
 }
 
@@ -217,8 +219,8 @@ a {
 
 .hero-tag {
   font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 28px;
@@ -229,19 +231,21 @@ a {
 .hero-title {
   font-size: clamp(64px, 10vw, 120px);
   font-weight: 700;
-  line-height: 1.0;
-  letter-spacing: -0.03em;
-  margin-bottom: 32px;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  margin-bottom: 40px;
   opacity: 0;
   animation: fadeUp 0.9s 0.2s forwards;
 }
 
 .hero-subtitle {
-  font-size: clamp(16px, 2vw, 22px);
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 600;
   color: var(--muted);
   max-width: 520px;
   margin-bottom: 48px;
-  line-height: 1.65;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
   opacity: 0;
   animation: fadeUp 0.9s 0.35s forwards;
 }
@@ -261,7 +265,7 @@ a {
   color: #000;
   font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: -0.02em;
   border-radius: 4px;
   transition: opacity 0.2s, transform 0.2s;
 }
@@ -277,8 +281,8 @@ a {
   border: 1px solid var(--border);
   color: var(--text);
   font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   border-radius: 4px;
   transition: border-color 0.2s, background 0.2s;
 }
@@ -323,9 +327,9 @@ section {
 }
 
 .section-label {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 24px;
@@ -353,8 +357,8 @@ section {
 .section-heading {
   font-size: clamp(32px, 5vw, 56px);
   font-weight: 700;
-  letter-spacing: -0.025em;
-  line-height: 1.1;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
   margin-bottom: 56px;
 }
 
@@ -440,8 +444,10 @@ section {
 
 .about-body {
   font-size: 17px;
+  font-weight: 600;
   color: rgba(255,255,255,0.75);
-  line-height: 1.75;
+  line-height: 1.5;
+  letter-spacing: -0.03em;
   margin-bottom: 20px;
 }
 
@@ -541,9 +547,9 @@ section {
 
 .work-year {
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--muted);
-  letter-spacing: 0.06em;
+  letter-spacing: -0.02em;
 }
 
 .work-badge {
@@ -561,21 +567,26 @@ section {
 .work-title {
   font-size: 28px;
   font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 4px;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  margin-bottom: 8px;
 }
 
 .work-role {
   font-size: 14px;
+  font-weight: 600;
   color: var(--muted);
   margin-bottom: 16px;
+  letter-spacing: -0.02em;
   font-style: italic;
 }
 
 .work-desc {
   font-size: 15px;
+  font-weight: 600;
   color: rgba(255,255,255,0.7);
-  line-height: 1.7;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
   margin-bottom: 20px;
 }
 
@@ -601,7 +612,7 @@ section {
   font-size: 14px;
   font-weight: 600;
   color: var(--accent);
-  letter-spacing: 0.03em;
+  letter-spacing: -0.02em;
   transition: opacity 0.2s;
 }
 
@@ -648,7 +659,8 @@ a.project-item:hover {
 .project-title {
   font-size: 20px;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
   margin-bottom: 8px;
   transition: color 0.2s;
 }
@@ -659,8 +671,10 @@ a.project-item:hover .project-title {
 
 .project-desc {
   font-size: 14px;
+  font-weight: 600;
   color: var(--muted);
-  line-height: 1.65;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
   max-width: 600px;
 }
 
@@ -702,9 +716,9 @@ a.project-item:hover .project-title {
   white-space: nowrap;
   animation: marquee 28s linear infinite;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--muted);
-  letter-spacing: 0.06em;
+  letter-spacing: -0.02em;
 }
 
 .edu-marquee span {
@@ -725,15 +739,17 @@ a.project-item:hover .project-title {
 .contact-heading {
   font-size: clamp(48px, 7vw, 96px);
   font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 1.0;
-  margin-bottom: 32px;
+  letter-spacing: -0.05em;
+  line-height: 0.88;
+  margin-bottom: 40px;
 }
 
 .contact-body {
   font-size: 18px;
+  font-weight: 600;
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
   margin-bottom: 48px;
   max-width: 560px;
 }
@@ -756,7 +772,7 @@ a.project-item:hover .project-title {
   color: var(--text);
   background: var(--card-bg);
   transition: border-color 0.2s, background 0.2s, transform 0.2s, color 0.2s;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.02em;
 }
 
 .contact-link:hover {
