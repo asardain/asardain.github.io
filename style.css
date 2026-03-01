@@ -380,7 +380,7 @@ section {
 .about-photo-wrap {
   width: 100%;
   aspect-ratio: 1;
-  border-radius: 8px;
+  border-radius: 0;
   overflow: hidden;
   background: var(--card-bg);
   margin-bottom: 24px;
@@ -391,7 +391,7 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: 8px;
+  border-radius: 0;
   border: 1px solid rgba(0,153,255,0.25);
   /* subtle dither dot-grid corner accent */
   background-image: var(--dither-dot);
