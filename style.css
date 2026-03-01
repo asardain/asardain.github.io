@@ -1,6 +1,7 @@
 /* ============================================================
    Anthony Sardain — Personal Site
    Inspired by victoriasierra.com: dark, minimal, typographic
+   Dither aesthetic: subtle Bayer dot-grid texture, pixel accents
    ============================================================ */
 
 *, *::before, *::after {
@@ -20,6 +21,10 @@
   --max-w: 1200px;
   --nav-h: 64px;
   --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Dither dot-grid: a 4×4 Bayer-inspired repeating dot pattern */
+  --dither-dot: radial-gradient(circle, rgba(0,153,255,0.18) 1px, transparent 1px);
+  --dither-size: 4px 4px;
 }
 
 html {
@@ -170,6 +175,19 @@ a {
   pointer-events: none;
 }
 
+/* dither dot-grid overlay on hero — very subtle, Bayer-inspired */
+#hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--dither-dot);
+  background-size: var(--dither-size);
+  opacity: 0.35;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse 70% 80% at 75% 50%, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 80% at 75% 50%, black 0%, transparent 70%);
+}
+
 .hero-inner {
   max-width: var(--max-w);
   margin: 0 auto;
@@ -292,6 +310,25 @@ section {
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* dither dash: a short stepped/dashed line beside section labels */
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--accent) 0px,
+    var(--accent) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  flex-shrink: 0;
 }
 
 .section-heading {
@@ -331,8 +368,18 @@ section {
   position: absolute;
   inset: 0;
   border-radius: 8px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(0,153,255,0.25);
+  /* subtle dither dot-grid corner accent */
+  background-image: var(--dither-dot);
+  background-size: var(--dither-size);
+  background-position: top left;
+  opacity: 0;
   pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+.about-photo-wrap:hover::after {
+  opacity: 0.5;
 }
 
 .about-photo {
@@ -340,12 +387,15 @@ section {
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: grayscale(20%);
-  transition: filter 0.4s;
+  /* Dithered photo: already has the aesthetic baked in */
+  filter: none;
+  transition: filter 0.4s, image-rendering 0s;
+  image-rendering: auto;
 }
 
 .about-photo:hover {
-  filter: grayscale(0%);
+  /* On hover: reveal the pixel/dither grid more crisply */
+  filter: brightness(1.04) contrast(1.03);
 }
 
 .about-tags {
@@ -409,6 +459,23 @@ section {
 #work {
   border-top: 1px solid var(--border);
   background: rgba(255,255,255,0.01);
+  /* dither dot hint in work section */
+  position: relative;
+}
+
+#work::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 320px;
+  background-image: var(--dither-dot);
+  background-size: var(--dither-size);
+  opacity: 0.08;
+  pointer-events: none;
+  mask-image: radial-gradient(circle at top right, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at top right, black 0%, transparent 70%);
 }
 
 .work-grid {
