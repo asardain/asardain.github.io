@@ -25,15 +25,34 @@
   /* Dither dot-grid: a 4×4 Bayer-inspired repeating dot pattern */
   --dither-dot: radial-gradient(circle, rgba(0,153,255,0.18) 1px, transparent 1px);
   --dither-size: 4px 4px;
+
+  /*
+    Full-page Bayer 4×4 dither texture.
+    Threshold matrix (row-major):
+      0  8  2 10
+     12  4 14  6
+      3 11  1  9
+     15  7 13  5
+    Each cell maps threshold/15 * 0.055 → opacity of cyan dot on black.
+    SVG is a 4×4 grid of 1px filled rects, tiled at 4px × 4px.
+  */
+  --page-dither-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect x='0' y='0' width='1' height='1' fill='rgba(0%2C153%2C255%2C0.000)'/%3E%3Crect x='1' y='0' width='1' height='1' fill='rgba(0%2C153%2C255%2C0.029)'/%3E%3Crect x='2' y='0' width='1' height='1' fill='rgba(0%2C153%2C255%2C0.007)'/%3E%3Crect x='3' y='0' width='1' height='1' fill='rgba(0%2C153%2C255%2C0.037)'/%3E%3Crect x='0' y='1' width='1' height='1' fill='rgba(0%2C153%2C255%2C0.044)'/%3E%3Crect x='1' y='1' width='1' height='1' fill='rgba(0%2C153%2C255%2C0.015)'/%3E%3Crect x='2' y='1' width='1' height='1' fill='rgba(0%2C153%2C255%2C0.051)'/%3E%3Crect x='3' y='1' width='1' height='1' fill='rgba(0%2C153%2C255%2C0.022)'/%3E%3Crect x='0' y='2' width='1' height='1' fill='rgba(0%2C153%2C255%2C0.011)'/%3E%3Crect x='1' y='2' width='1' height='1' fill='rgba(0%2C153%2C255%2C0.040)'/%3E%3Crect x='2' y='2' width='1' height='1' fill='rgba(0%2C153%2C255%2C0.004)'/%3E%3Crect x='3' y='2' width='1' height='1' fill='rgba(0%2C153%2C255%2C0.033)'/%3E%3Crect x='0' y='3' width='1' height='1' fill='rgba(0%2C153%2C255%2C0.055)'/%3E%3Crect x='1' y='3' width='1' height='1' fill='rgba(0%2C153%2C255%2C0.026)'/%3E%3Crect x='2' y='3' width='1' height='1' fill='rgba(0%2C153%2C255%2C0.048)'/%3E%3Crect x='3' y='3' width='1' height='1' fill='rgba(0%2C153%2C255%2C0.018)'/%3E%3C/svg%3E");
 }
 
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  /* Full-page dither: Bayer 4×4 SVG tile as body canvas */
+  background-color: var(--bg);
+  background-image: var(--page-dither-svg);
+  background-size: 4px 4px;
+  background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 body {
-  background: var(--bg);
+  /* Inherit the dither from html — keep body transparent so the tile shows */
+  background: transparent;
   color: var(--text);
   font-family: var(--font);
   line-height: 1.6;
@@ -458,7 +477,7 @@ section {
 ═══════════════════════════════════ */
 #work {
   border-top: 1px solid var(--border);
-  background: rgba(255,255,255,0.01);
+  background: transparent;
   /* dither dot hint in work section */
   position: relative;
 }
